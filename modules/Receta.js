@@ -25,6 +25,7 @@ export default class Receta {
     imprimirEnConsola = _ => {
         console.log(this.nombre, 'Autor:' + this.autor);
         this.ingredientes.forEach((ingrediente,i) => console.log(i + 1,ingrediente.getDescripcion()));
+        console.log('Costo total:',this.getCosto(),'pesos');
     }
     /**
      * @param {Ingrediente} ingrediente
