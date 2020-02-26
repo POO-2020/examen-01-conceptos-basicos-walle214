@@ -7,10 +7,10 @@ export default class Receta {
      * @param {String} autor 
      * @param {Ingrediente[]} ingredientes 
      */
-    constructor(nombre, autor, ingredientes) {
+    constructor(nombre, autor, ingredientes = []) {
         this.nombre = nombre;
         this.autor = autor;
-        this.ingredientes = ingredientes
+        this.ingredientes = ingredientes;
     }
     getNumeroIngredientes = _ => this.ingredientes.length;
     getCosto = _ => this.ingredientes.reduce((previusValue, currentValue, currentIndex) => previusValue + currentValue.costo);
