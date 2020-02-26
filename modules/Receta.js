@@ -13,10 +13,19 @@ export default class Receta {
         this.ingredientes = ingredientes;
     }
     getNumeroIngredientes = _ => this.ingredientes.length;
-    getCosto = _ => this.ingredientes.reduce((previusValue, currentValue, currentIndex) => previusValue + currentValue.costo);
+
+    getCosto = _ => {
+        let costo = 0;
+
+        this.ingredientes.forEach(i => costo += i.costo);
+
+        return costo;
+    }
+
     imprimirEnConsola = _ => {
         console.log(this.nombre, 'Autor:' + this.autor);
         this.ingredientes.forEach(ingrediente => console.log(ingrediente.getDescripcion()));
     }
+
     agregarIngrdiente = ingrediente => this.ingredientes.push(ingrediente);
 }
